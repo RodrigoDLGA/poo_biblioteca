@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="843.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rodrigo.MainWindowController">
+   <children>
+      <TabPane prefHeight="557.0" prefWidth="843.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Libros">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableLibros" layoutX="14.0" layoutY="14.0" onMouseClicked="#getSelected" prefHeight="410.0" prefWidth="815.0">
+                          <columns>
+                            <TableColumn fx:id="col_titulo" prefWidth="249.0" text="Título" />
+                            <TableColumn fx:id="col_autor" minWidth="0.0" prefWidth="219.0" text="Autor" />
+                              <TableColumn fx:id="col_editorial" prefWidth="149.0" text="Editorial" />
+                              <TableColumn fx:id="col_anio" prefWidth="54.0" text="Año" />
+                              <TableColumn fx:id="col_tema" prefWidth="110.0" text="Tema" />
+                              <TableColumn fx:id="col_id" prefWidth="33.0" text="ID" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="14.0" layoutY="430.0" mnemonicParsing="false" onAction="#Add_libros" text="Agregar nuevo libro" />
+                        <Button layoutX="146.0" layoutY="430.0" mnemonicParsing="false" onAction="#Edit" text="Editar libro" />
+                        <Button layoutX="230.0" layoutY="430.0" mnemonicParsing="false" onAction="#Delete" text="Borrar libro" />
+                        <TextField fx:id="filterField" layoutX="465.0" layoutY="430.0" prefHeight="25.0" prefWidth="364.0" promptText="Buscar en tabla..." />
+                        <Label layoutX="17.0" layoutY="471.0" text="Título:" />
+                        <Label layoutX="17.0" layoutY="497.0" text="Autor:" />
+                        <TextField fx:id="txt_titulo" layoutX="62.0" layoutY="467.0" prefHeight="25.0" prefWidth="236.0" />
+                        <TextField fx:id="txt_autor" layoutX="65.0" layoutY="493.0" prefHeight="25.0" prefWidth="233.0" />
+                        <Label layoutX="306.0" layoutY="471.0" text="Editorial:" />
+                        <Label layoutX="306.0" layoutY="497.0" text="Tema:" />
+                        <TextField fx:id="txt_editorial" layoutX="364.0" layoutY="467.0" prefHeight="25.0" prefWidth="187.0" />
+                        <TextField fx:id="txt_tema" layoutX="364.0" layoutY="493.0" prefHeight="25.0" prefWidth="187.0" />
+                        <Label layoutX="566.0" layoutY="497.0" text="Año:" />
+                        <TextField fx:id="txt_anio" layoutX="604.0" layoutY="493.0" prefHeight="25.0" prefWidth="62.0" />
+                        <TextField fx:id="txt_id" layoutX="604.0" layoutY="467.0" prefHeight="25.0" prefWidth="62.0" />
+                        <Label layoutX="565.0" layoutY="471.0" text="ID:" />
+                        <Text layoutX="687.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*EL ID NO ES EDITABLE*" />
+                        <Label layoutX="403.0" layoutY="434.0" text="Búsqueda:" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Inventario">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="416.0" prefWidth="815.0">
+                          <columns>
+                            <TableColumn prefWidth="62.0" text="ID" />
+                            <TableColumn prefWidth="507.0" text="Título" />
+                              <TableColumn minWidth="0.0" prefWidth="85.0" text="Cantidad" />
+                              <TableColumn prefWidth="160.0" text="Estatus" />
+                          </columns>
+                        </TableView>
+                        <TextField layoutX="14.0" layoutY="437.0" prefHeight="25.0" prefWidth="242.0" />
+                        <Button layoutX="264.0" layoutY="437.0" mnemonicParsing="false" text="Buscar libro" />
+                        <Button layoutX="617.0" layoutY="437.0" mnemonicParsing="false" text="Agregar a inventario" />
+                        <AnchorPane layoutX="713.0" layoutY="437.0" />
+                        <Button layoutX="752.0" layoutY="437.0" mnemonicParsing="false" text="Dar de baja" />
+                        <Label layoutX="14.0" layoutY="483.0" text="ID:" />
+                        <Label layoutX="287.0" layoutY="483.0" text="Título:" />
+                        <Label layoutX="135.0" layoutY="483.0" text="Cantidad:" />
+                        <TextField layoutX="37.0" layoutY="479.0" prefHeight="25.0" prefWidth="89.0" />
+                        <TextField layoutX="329.0" layoutY="479.0" prefHeight="25.0" prefWidth="193.0" />
+                        <TextField layoutX="199.0" layoutY="479.0" prefHeight="25.0" prefWidth="65.0" />
+                        <ComboBox fx:id="estatus" layoutX="592.0" layoutY="479.0" prefWidth="150.0" />
+                        <Label layoutX="538.0" layoutY="483.0" text="Estatus:" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Préstamos">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="14.0" layoutY="13.0" prefHeight="504.0" prefWidth="477.0">
+                          <columns>
+                            <TableColumn prefWidth="100.0" text="ID del Libro" />
+                            <TableColumn prefWidth="251.0" text="Nombre alumno" />
+                              <TableColumn prefWidth="125.0" text="Matrícula" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="506.0" layoutY="14.0" text="ID del Libro:" />
+                        <Label layoutX="506.0" layoutY="71.0" text="Nombre alumno:" />
+                        <Label layoutX="506.0" layoutY="129.0" text="Matrícula:" />
+                        <TextField layoutX="506.0" layoutY="39.0" />
+                        <TextField layoutX="506.0" layoutY="95.0" prefHeight="25.0" prefWidth="321.0" />
+                        <TextField layoutX="506.0" layoutY="153.0" />
+                        <Button layoutX="629.0" layoutY="197.0" mnemonicParsing="false" text="Prestar" />
+                        <Button layoutX="744.0" layoutY="489.0" mnemonicParsing="false" onAction="#Logout" text="Cerrar sesión" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

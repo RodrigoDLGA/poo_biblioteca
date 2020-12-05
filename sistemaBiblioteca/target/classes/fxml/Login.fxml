@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="Login" prefHeight="434.0" prefWidth="694.0" stylesheets="@../Login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rodrigo.MainController">
+   <children>
+      <Pane fx:id="pane1" layoutX="200.0" prefHeight="434.0" prefWidth="295.0" stylesheets="@../Login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="103.0" fitWidth="131.0" layoutX="82.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../upvwhite.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtUser" layoutX="73.0" layoutY="263.0" promptText="Usuario" />
+            <PasswordField fx:id="txtPassword" layoutX="73.0" layoutY="297.0" promptText="Contraseña" />
+            <Text fill="WHITE" layoutX="109.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="¡Bienvenido!">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="123.0" layoutY="350.0" mnemonicParsing="false" onAction="#Login" text="Log in" />
+         </children></Pane>
+      <Pane fx:id="pane2" layoutY="140.0" prefHeight="75.0" prefWidth="694.0" stylesheets="@../Login.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0">
+         <children>
+            <Text fill="WHITE" fontSmoothingType="LCD" layoutX="17.0" layoutY="48.0" stroke="#141313" strokeType="OUTSIDE" strokeWidth="0.5" text="Sistema de Biblioteca" textAlignment="CENTER" wrappingWidth="629.6740112304688" x="15.0">
+               <font>
+                  <Font name="Cantarell Bold" size="28.0" />
+               </font>
+            </Text>
+         </children></Pane>
+   </children>
+</AnchorPane>
