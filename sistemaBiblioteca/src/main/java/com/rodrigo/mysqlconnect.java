@@ -30,7 +30,6 @@ public class mysqlconnect {
         try{
             PreparedStatement ps = conn.prepareStatement("select * from libros"); // sentencia sql
             ResultSet rs = ps.executeQuery(); //Ejecuta y guarda resultado de la sentencia
-
             while (rs.next()){
                 list.add(new Libros(
                         rs.getString("titulo"),
@@ -44,4 +43,44 @@ public class mysqlconnect {
         }catch (Exception e){ }
         return list;
     }
+
+    public static ObservableList<Inventarios> getDatainventarios(){
+        Connection conn = ConnectDb();
+        ObservableList<Inventarios> list = FXCollections.observableArrayList();
+        try{
+            PreparedStatement ps = conn.prepareStatement("select * from inventario");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                list.add(new Inventarios(
+                        rs.getString("titulo"),
+                        rs.getString("estatus"),
+                        Integer.parseInt(rs.getString("id")),
+                        Integer.parseInt(rs.getString("cantidad")))
+                );
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return list;
+    }
+
+    public static ObservableList<Prestamos> getDataprestamos(){
+        Connection conn = ConnectDb();
+        ObservableList<Prestamos> list = FXCollections.observableArrayList();
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from prestamos");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                list.add(new Prestamos(
+                        rs.getString("nombre_alumno"),
+                        Integer.parseInt(rs.getString("idLibro")),
+                        Integer.parseInt(rs.getString("matricula")))
+                );
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return list;
+    }
+
 }

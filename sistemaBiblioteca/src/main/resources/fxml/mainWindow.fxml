@@ -29,7 +29,7 @@
                         <Label layoutX="17.0" layoutY="471.0" text="Título:" />
                         <Label layoutX="17.0" layoutY="497.0" text="Autor:" />
                         <TextField fx:id="txt_titulo" layoutX="62.0" layoutY="467.0" prefHeight="25.0" prefWidth="236.0" />
-                        <TextField fx:id="txt_autor" layoutX="65.0" layoutY="493.0" prefHeight="25.0" prefWidth="233.0" />
+                        <TextField fx:id="txt_autor" layoutX="62.0" layoutY="493.0" prefHeight="25.0" prefWidth="236.0" />
                         <Label layoutX="306.0" layoutY="471.0" text="Editorial:" />
                         <Label layoutX="306.0" layoutY="497.0" text="Tema:" />
                         <TextField fx:id="txt_editorial" layoutX="364.0" layoutY="467.0" prefHeight="25.0" prefWidth="187.0" />
@@ -48,27 +48,24 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="416.0" prefWidth="815.0">
+                        <TableView fx:id="tableInventario" layoutX="14.0" layoutY="14.0" onMouseClicked="#getSelectedInventario" prefHeight="416.0" prefWidth="815.0">
                           <columns>
-                            <TableColumn prefWidth="62.0" text="ID" />
-                            <TableColumn prefWidth="507.0" text="Título" />
-                              <TableColumn minWidth="0.0" prefWidth="85.0" text="Cantidad" />
-                              <TableColumn prefWidth="160.0" text="Estatus" />
+                            <TableColumn fx:id="col_idINT" prefWidth="62.0" text="ID" />
+                            <TableColumn fx:id="col_tituloINT" prefWidth="507.0" text="Título" />
+                              <TableColumn fx:id="col_cantidadINT" minWidth="0.0" prefWidth="85.0" text="Cantidad" />
+                              <TableColumn fx:id="col_estatusINT" prefWidth="160.0" text="Estatus" />
                           </columns>
                         </TableView>
-                        <TextField layoutX="14.0" layoutY="437.0" prefHeight="25.0" prefWidth="242.0" />
-                        <Button layoutX="264.0" layoutY="437.0" mnemonicParsing="false" text="Buscar libro" />
-                        <Button layoutX="617.0" layoutY="437.0" mnemonicParsing="false" text="Agregar a inventario" />
+                        <TextField fx:id="filterField2" layoutX="78.0" layoutY="437.0" prefHeight="25.0" prefWidth="242.0" promptText="Buscar en tabla..." />
                         <AnchorPane layoutX="713.0" layoutY="437.0" />
-                        <Button layoutX="752.0" layoutY="437.0" mnemonicParsing="false" text="Dar de baja" />
                         <Label layoutX="14.0" layoutY="483.0" text="ID:" />
-                        <Label layoutX="287.0" layoutY="483.0" text="Título:" />
                         <Label layoutX="135.0" layoutY="483.0" text="Cantidad:" />
-                        <TextField layoutX="37.0" layoutY="479.0" prefHeight="25.0" prefWidth="89.0" />
-                        <TextField layoutX="329.0" layoutY="479.0" prefHeight="25.0" prefWidth="193.0" />
-                        <TextField layoutX="199.0" layoutY="479.0" prefHeight="25.0" prefWidth="65.0" />
-                        <ComboBox fx:id="estatus" layoutX="592.0" layoutY="479.0" prefWidth="150.0" />
-                        <Label layoutX="538.0" layoutY="483.0" text="Estatus:" />
+                        <TextField fx:id="txt_idINT" layoutX="37.0" layoutY="479.0" prefHeight="25.0" prefWidth="89.0" />
+                        <TextField fx:id="txt_cantINT" layoutX="199.0" layoutY="479.0" prefHeight="25.0" prefWidth="65.0" />
+                        <ComboBox fx:id="estatus" layoutX="336.0" layoutY="479.0" prefWidth="150.0" />
+                        <Label layoutX="283.0" layoutY="483.0" text="Estatus:" />
+                        <Button layoutX="618.0" layoutY="462.0" mnemonicParsing="false" onAction="#EditarInventario" text="Confirmar edición" />
+                        <Label layoutX="15.0" layoutY="441.0" text="Búsqueda:" />
                      </children>
                   </AnchorPane>
             </content>
@@ -77,21 +74,25 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="14.0" layoutY="13.0" prefHeight="504.0" prefWidth="477.0">
+                        <TableView fx:id="tablePrestamos" layoutX="14.0" layoutY="13.0" onMouseClicked="#getSelectedPrestamos" prefHeight="504.0" prefWidth="477.0">
                           <columns>
-                            <TableColumn prefWidth="100.0" text="ID del Libro" />
-                            <TableColumn prefWidth="251.0" text="Nombre alumno" />
-                              <TableColumn prefWidth="125.0" text="Matrícula" />
+                            <TableColumn fx:id="col_idPRE" prefWidth="100.0" text="ID del Libro" />
+                            <TableColumn fx:id="col_NombreA" prefWidth="251.0" text="Nombre alumno" />
+                              <TableColumn fx:id="col_Matricula" prefWidth="125.0" text="Matrícula" />
                           </columns>
                         </TableView>
                         <Label layoutX="506.0" layoutY="14.0" text="ID del Libro:" />
                         <Label layoutX="506.0" layoutY="71.0" text="Nombre alumno:" />
                         <Label layoutX="506.0" layoutY="129.0" text="Matrícula:" />
-                        <TextField layoutX="506.0" layoutY="39.0" />
-                        <TextField layoutX="506.0" layoutY="95.0" prefHeight="25.0" prefWidth="321.0" />
-                        <TextField layoutX="506.0" layoutY="153.0" />
-                        <Button layoutX="629.0" layoutY="197.0" mnemonicParsing="false" text="Prestar" />
+                        <TextField fx:id="txt_idPRE" layoutX="506.0" layoutY="39.0" />
+                        <TextField fx:id="txt_NombreA" layoutX="506.0" layoutY="95.0" prefHeight="25.0" prefWidth="321.0" />
+                        <TextField fx:id="txt_Matricula" layoutX="506.0" layoutY="153.0" />
+                        <Button layoutX="506.0" layoutY="198.0" mnemonicParsing="false" onAction="#Add_prestamos" text="Prestar" />
                         <Button layoutX="744.0" layoutY="489.0" mnemonicParsing="false" onAction="#Logout" text="Cerrar sesión" />
+                        <Label layoutX="505.0" layoutY="463.0" text="Búsqueda:" />
+                        <TextField fx:id="filterField3" layoutX="506.0" layoutY="489.0" prefHeight="25.0" prefWidth="225.0" promptText="Buscar en tabla..." />
+                        <Button layoutX="570.0" layoutY="198.0" mnemonicParsing="false" onAction="#EditarPrestamo" text="Editar" />
+                        <Button layoutX="629.0" layoutY="198.0" mnemonicParsing="false" onAction="#DeletePrestamo" text="Borrar" />
                      </children>
                   </AnchorPane>
               </content>

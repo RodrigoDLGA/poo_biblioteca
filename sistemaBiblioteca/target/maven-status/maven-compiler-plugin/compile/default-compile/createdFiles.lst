@@ -1,6 +1,8 @@
 com\rodrigo\Libros.class
 com\rodrigo\Main.class
 com\rodrigo\App.class
-com\rodrigo\MainController.class
+com\rodrigo\Inventarios.class
 com\rodrigo\MainWindowController.class
 com\rodrigo\mysqlconnect.class
+com\rodrigo\Prestamos.class
+com\rodrigo\MainController.class
